@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+/*html,body{font-family: 'Lato', sans-serif;}*/
+body{ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;overflow:hidden}
+.headerbg{background: url(../images/bannerbg.png);min-height:670px;width:100%;background-size:cover;position:relative;}
+.headerbg .header{background:rgba(0, 0, 0, 0.24);height:51px;}
+.headerbg .header .container{width:975px;height:100%;margin-right:auto;margin-left:auto;}
+.headerbg .header .container .logo{float:left;margin:8px 0 8px 0em;}
+.headerbg .header .container .logo a{color:#B5A9B7;font-size:34px}
+.headerbg .header .container .nav{float:right;}
+.headerbg .header .container .nav ul li{display:inline-block;margin:16px 24px 0 0}
+.headerbg .header .container .nav ul li a{color:#B5A9B7;font-size: 12px;}
+
+.headerbg .home{color:#B5A9B7;font-size:54px;position:absolute;left:37%;top:32%;}
