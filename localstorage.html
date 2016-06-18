@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+	i{color: red}
+</style>
+<script>
+window.onload=function(){
+	var  oSpan=document.getElementById('s');
+	var  oTxt=document.getElementById('txt');
+	var  total=6;
+
+	var msg=localStorage.msg;
+
+	if(msg){
+		oTxt.value=msg;
+		lca();	
+	}
+	oTxt.oninput=function(){
+		localStorage.msg=this.value;
+		 lca();
+		
+	};
+	function lca(){
+		var len=total-oTxt.value.length;
+		if(len>=0){
+			oSpan.innerHTML='还能输入'+len+'个字';
+		}else{
+			oSpan.innerHTML='还能输入<i>'+Math.abs(len)+'</i>个字';
+		}
+	};
+};
+</script>
+</head>
+<body>
+	<span id="s">还能输入6个字</span><br/>
+	<input type="text" value=""  id="txt" />
+</body>
+</html>
