@@ -1,0 +1,7 @@
+
+
+body{width:100%;background: url(../images/css_back2.png) repeat 0 0;}
+div{width:484px;overflow:hidden;height:320px;margin:100px auto;}
+div ul{width:2880px;}
+div ul li {float:left;border:2px solid #ccc;height:316px;width:480px;}
+div ul li img {height:316px;width:480px;}
