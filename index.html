@@ -6,20 +6,20 @@
 <link rel="stylesheet" type="text/css" href="css/base.css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript">
-function rnd(n,m){
-	return parseInt(Math.random()*(m-n)+n);
-}
+// function rnd(n,m){
+// 	return parseInt(Math.random()*(m-n)+n);
+// }
 
-window.onload=function(){
-	var oHome=document.getElementById('home');
-	var timer=null;
+// window.onload=function(){
+// 	var oHome=document.getElementById('home');
+// 	var timer=null;
 
-	clearInterval(timer);
-	setInterval(function(){
-		oHome.style.color='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
-	},400)
+// 	clearInterval(timer);
+// 	setInterval(function(){
+// 		oHome.style.color='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+// 	},400)
 
-};
+// };
 </script>
 </head>
 <body>
@@ -27,18 +27,18 @@ window.onload=function(){
    <div class="header">
 		  <div class="container clearfix">
 			    <div class="logo">
-					<a href="javacsript:;">Resume</a>
+					<a href="javacsript:;"><img src="images/logo.png" alt=""/></a>
 			    </div>
 				<div class="nav">
 					 <ul>
-						<li><a class="scroll" href="javacsript:;">HTML-CSS</a></li>
+						<li><a class="scroll" href="css+html.html">HTML+CSS</a></li>
 						<li><a class="scroll" href="javacsript:;">JAVASCRIPT</a></li>
 						<li><a class="scroll" href="javacsript:;">HTML5</a></li>
-					 </ul>
+ 					 </ul>
 				</div>
 		  </div>
    </div>
-   <div class="home" id="home">Welcome to my nest</div>
+   <!-- <div class="home" id="home">Welcome to my nest</div> -->
 </div>
 </body>
 </html>
