@@ -1,44 +1,71 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title></title>
-<link rel="stylesheet" type="text/css" href="css/base.css" />
-<link rel="stylesheet" type="text/css" href="css/index.css" />
-<script type="text/javascript">
-// function rnd(n,m){
-// 	return parseInt(Math.random()*(m-n)+n);
-// }
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+div{ position:absolute;left:0;top:0;width:100px; height:100px; background:red; line-height:100px; text-align:center; font-size:30px;}
+</style>
+<script>
+window.onload = function(){
+	var aDiv = document.querySelectorAll("div");
+	
+	for(var i = 0; i < aDiv.length; i++){
+		drag(aDiv[i]);
+	}
+	
+	function drag(oDiv){
+		oDiv.addEventListener("touchstart",function(ev){
+			
+			//确定哪根手指
+			var disX = ev.targetTouches[ev.targetTouches.length - 1].pageX - oDiv.offsetLeft;
+			var disY = ev.targetTouches[ev.targetTouches.length - 1].pageY - oDiv.offsetTop;
+			
+			//identifier唯一标识 —— id
+			var id = ev.targetTouches[ev.targetTouches.length - 1].identifier; 
+			//targetTouches [div2,div1,,div3]
+function fnMove(ev){
+	for(var i = 0; i < ev.targetTouches.length; i++){
+		if(id == ev.targetTouches[i].identifier){
+			oDiv.style.left = ev.targetTouches[i].pageX - disX + "px";		
+			oDiv.style.top = ev.targetTouches[i].pageY - disY + "px";
+			break;
+		}
+	}
+	
+}
 
-// window.onload=function(){
-// 	var oHome=document.getElementById('home');
-// 	var timer=null;
-
-// 	clearInterval(timer);
-// 	setInterval(function(){
-// 		oHome.style.color='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
-// 	},400)
-
-// };
+/*
+	targetTouches [div1,div2]  start move
+    changedTouches [div3] end
+*/
+function fnEnd(){
+	for(var i = 0; i < ev.changedTouches.length; i++){
+		if(id == ev.changedTouches[i].identifier){
+			oDiv.removeEventListener("touchmove",fnMove,false);
+			oDiv.removeEventListener("touchend",fnEnd,false);
+		}
+	}
+}
+			
+			oDiv.addEventListener("touchmove",fnMove,false);
+			oDiv.addEventListener("touchend",fnEnd,false);
+			
+		    ev.preventDefault();
+		},false);
+	}
+	
+ 
+};
 </script>
 </head>
+
 <body>
-<div id="top-top" class="headerbg">
-   <div class="header">
-		  <div class="container clearfix">
-			    <div class="logo">
-					<a href="javacsript:;"><img src="images/logo.png" alt=""/></a>
-			    </div>
-				<div class="nav">
-					 <ul>
-						<li><a class="scroll" href="css+html.html">HTML+CSS</a></li>
-						<li><a class="scroll" href="javacsript:;">JAVASCRIPT</a></li>
-						<li><a class="scroll" href="javacsript:;">HTML5</a></li>
- 					 </ul>
-				</div>
-		  </div>
-   </div>
-   <!-- <div class="home" id="home">Welcome to my nest</div> -->
-</div>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
 </body>
 </html>
