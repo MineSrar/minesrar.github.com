@@ -7,65 +7,56 @@
 <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
 <title>智能社 - www.zhinengshe.com</title>
 <style>
-div{ position:absolute;left:0;top:0;width:100px; height:100px; background:red; line-height:100px; text-align:center; font-size:30px;}
+#div1{width:200px; height:200px; line-height:200px; text-align:center; background:#ccc; margin:100px auto; font-size:30px;}
 </style>
 <script>
-window.onload = function(){
-	var aDiv = document.querySelectorAll("div");
-	
-	for(var i = 0; i < aDiv.length; i++){
-		drag(aDiv[i]);
-	}
-	
-	function drag(oDiv){
-		oDiv.addEventListener("touchstart",function(ev){
-			
-			//确定哪根手指
-			var disX = ev.targetTouches[ev.targetTouches.length - 1].pageX - oDiv.offsetLeft;
-			var disY = ev.targetTouches[ev.targetTouches.length - 1].pageY - oDiv.offsetTop;
-			
-			//identifier唯一标识 —— id
-			var id = ev.targetTouches[ev.targetTouches.length - 1].identifier; 
-			//targetTouches [div2,div1,,div3]
-function fnMove(ev){
-	for(var i = 0; i < ev.targetTouches.length; i++){
-		if(id == ev.targetTouches[i].identifier){
-			oDiv.style.left = ev.targetTouches[i].pageX - disX + "px";		
-			oDiv.style.top = ev.targetTouches[i].pageY - disY + "px";
-			break;
-		}
-	}
-	
+function a2d(n){
+	return n*180/Math.PI;
 }
 
-/*
-	targetTouches [div1,div2]  start move
-    changedTouches [div3] end
-*/
-function fnEnd(){
-	for(var i = 0; i < ev.changedTouches.length; i++){
-		if(id == ev.changedTouches[i].identifier){
+window.onload = function(){
+	var oDiv = document.getElementById("div1");
+	
+	var d = 0;
+	oDiv.addEventListener("touchstart",function(ev){
+		var oldD = d;
+		function getD(ev){
+			var x1 = ev.targetTouches[0].pageX;
+			var y1 = ev.targetTouches[0].pageY;
+			
+			var x2 = ev.targetTouches[1].pageX;
+			var y2 = ev.targetTouches[1].pageY;
+			
+			var x = x1 - x2;
+			var y = y2 - y1;
+			
+			return a2d(Math.atan2(y,x));
+		}
+		
+		if(ev.targetTouches.length == 2){
+			var downD = getD(ev);
+		}
+		
+		function fnMove(ev){
+			if(ev.targetTouches.length == 2){
+				d = oldD + downD - getD(ev);
+				oDiv.style.WebkitTransform = "rotate("+d+"deg)"; 
+			}
+		}
+		function fnEnd(){
 			oDiv.removeEventListener("touchmove",fnMove,false);
 			oDiv.removeEventListener("touchend",fnEnd,false);
 		}
-	}
-}
-			
-			oDiv.addEventListener("touchmove",fnMove,false);
-			oDiv.addEventListener("touchend",fnEnd,false);
-			
-		    ev.preventDefault();
-		},false);
-	}
-	
- 
+		oDiv.addEventListener("touchmove",fnMove,false);
+		oDiv.addEventListener("touchend",fnEnd,false);
+		
+		ev.preventDefault();
+	},false);
 };
 </script>
 </head>
 
 <body>
-<div>div1</div>
-<div>div2</div>
-<div>div3</div>
+<div id="div1">智能社</div>
 </body>
 </html>
