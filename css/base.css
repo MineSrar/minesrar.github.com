@@ -1,12 +1,14 @@
 @charset "utf-8";
-*{margin:0;padding:0;}
-ul li,ol li{list-style: none;}
-a{color: #000;text-decoration: none;font-size: 12px}
-clearfix:after{content:'';clear:both;display: block;}
-clearfix{zoom:1;}
-em,i{font-style:normal;}
-b{font-weight: normal;}
-img{vertical-align:top;}
-input{outline:none;}
-h1,h2,h3,h4,h5,h6{font-family:'微软雅黑'}
-a:hover{color:#00bba6}
+
+*{ padding:0; margin:0; line-height:100%;}
+body{ font-size:12px;  background:#1c1a25;}
+a{ color:#000; text-decoration:none;}
+ul,ol{ list-style:none;}
+h1,h2,h3,h4,h5,h6{ font-size:12px; font-weight:normal;}
+b,strong{ font-weight:normal;}
+i,em{ font-style:normal;}
+img{ vertical-align:top; border:0;}
+table{ border-collapse:collapse;}
+
+.clearfix:after{ clear:both; display:block; content:'';}
+.clearfix{ zoom:1;}
