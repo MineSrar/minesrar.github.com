@@ -1,46 +1,389 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Document</title>
-<style>
-	body{
-		background: #063c4a;
-		width:100%;
-		height:100%;
-	}
-	
-/*LOADING*/
-#loading{height:100%;background:#063c4a;display:;z-index:999;position:fixed;top:0;left:0;width:100%;height:100%;transition:all ease 0.5s;-webkit-transition:all ease 0.5s}
-#latido{animation:5s latido infinite;-webkit-animation:5s latido infinite;height:500px;width:500px;position:absolute;left:50%;top:50%;margin-top:-250px;margin-left:-250px;}
-#load{animation:0.4s load infinite;-webkit-animation:0.4s load infinite;position:absolute;position:absolute;left:50%;top:50%;margin-top:-81px;margin-left:-81px;z-index:1}
-#circle{width:140px;height:140px;margin:-70px 0 0 -70px;top:50%;left:50%;position:absolute;background:url(logo-load.png) no-repeat center #ff5859;border-radius:140px;z-index:2}
+<meta name="viewport" content="width=320,user-scalable=no,initial-scale=1"/>
+<link rel="shortcut icon" href="favicon.ico">
+<title>李傲-个人站</title>
 
-@keyframes load{
-   0%{transform:rotate(0deg);-webkit-transform:rotate(0deg)}   
-   25%{transform:rotate(90deg);-webkit-transform:rotate(90deg)}
-   50%{transform:rotate(180deg);-webkit-transform:rotate(180deg)}
-   75%{transform:rotate(270deg);-webkit-transform:rotate(270deg)}
-   100%{transform:rotate(360deg);-webkit-transform:rotate(360deg);}
-}
-</style>
-<script src="jquery-1.11.2.min.js"></script>
+<link href="css/reset.css" rel="stylesheet">
+<link href="css/css.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="fonts/fonts.css" rel="stylesheet">
+
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/jquery.easing.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+
+</head>
+<body id="home">
+<div id="loading">
+	<img src="img/loading.png" id="load">
+	<div id="latido" class="loadingGlow"></div>
+    <div id="circle"></div>
+</div>
+<header>
+  <div class="logo">
+  	<a href="index.html">
+    <img src="img/logo-salmon.png" class="salmon"/>
+  	<img src="img/logo-azul.png" class="blue"/>
+    </a>
+  </div>
+  <div class="btnMenu" id="btnMenu"><i></i><i></i><i></i></div>
+  <nav id="nav">
+    <div class="botonera">
+        <i></i>
+        <ul id="ul_by">
+          <li><a href="index.html" class="act">home<i></i></a></li>
+          <li><a href="#slide1">技能<i></i></a></li>
+          <li><a href="#slide2">工作经验<i></i></a></li>
+          <li><a href="#slide3">联系方式<i></i></a></li>
+        </ul>
+        <i></i>
+    </div>
+  </nav>
+</header>
+<div id="nav_main">
+    <div class="nav-main" data-section="inicio"></div>
+    <div class="nav-main" data-section="slide1"></div>
+    <div class="nav-main" data-section="slide2"></div>
+    <div class="nav-main" data-section="slide3"></div>
+</div>
+<section id="inicio" class="salmonGlow in" data-rel="#slide1">
+     <div class="splash layer" data-depth="0.60" style="z-index:9999;margin-left:1%;">
+        <div class="welcome" style="height:500px; width:630px; text-align:left" ><br>
+            <hr class="fat blue">
+            <p><strong>李傲</strong><br>WEB前端工程师</p>
+            <hr>
+        </div>
+    </div>
+    <div class="splash layer" data-depth="0.30" style="z-index:2"><img src="img/splash-welcome.png"></div>
+    <div class="splash layer" data-depth="0.20" style="z-index:1"><img src="img/particles-welcome.png" style="opacity:0.4"></div>
+    <a href="#slide1" class="arrowDown"><img src="img/arrow-home.png" ></a>
+</section>
+
+<section id="slide1" class="blueGlow" data-rel="#slide2">	
+     <div class="splash layer" data-depth="0.60" style="z-index:9999;margin-top:10%;margin-left:1%;">
+        <div class="welcome" style="height:500px; width:580px; text-align:left" ><br>
+            <hr class="fat">
+            <p class="span_size">
+                <span>2015.8-2016.6</span>&nbsp;&nbsp;湖南出头科技有限公司
+                <i></i>
+            </p>
+            <hr>
+        </div>
+    </div>
+            <div class="splash layer" data-depth="0.30" style="z-index:1"><img src="img/splash-estudio.png"></div>
+            <div class="splash layer" data-depth="0.20" style="z-index:1"><img src="img/particles-estudio.png"></div>
+    <a href="#slide2" class="arrowDown"><img src="img/arrow-home-salmon.png"></a>
+</section>
+<section id="slide2" class="salmonGlow" data-rel="#slide3">	
+     <div class="splash layer" data-depth="0.60" style="z-index:9999;margin-top:10%;margin-left:2%;">
+        <div class="welcome" style="height:400px; width:660px; text-align:left; margin-top:5%" ><br>
+            <hr class="fat blue">
+            <p>
+                <strong></strong>
+            </p>
+            <hr>
+        </div>
+    </div>
+    <div class="splash layer" data-depth="0.20" style="z-index:1;margin-top:20%;"><img src="img/particles-agencia.png" style="opacity:0.4"></div>
+    <div class="splash layer" data-depth="0.30" style="z-index:2; margin-left:1%;"><img src="img/splash-agencia.png"></div>
+    <a href="#slide3" class="arrowDown"><img src="img/arrow-home.png"></a>
+</section>
+<section id="slide3" class="Shuffling ">
+	  <div id="sequence" class="seq">
+	    <ul class="seq-canvas">
+		<li class="seq-step1 seq-valign seq-in">
+			<div class="seq-vcenter">
+				<img data-seq class="seq-feature" src=" img/bananas.png" alt="A cartoon illustration of a bunch of bananas" width="389" height="300" srcset=" img/bananas.png 1x,  img/bananas@2x.png 2x" />
+				<h2 data-seq class="seq-title">Bananas</h2>
+			</div>
+		</li>
+		<li class="seq-step2 seq-valign">
+			<div class="seq-vcenter">
+				<img data-seq class="seq-feature" src=" img/coconut.png" alt="A cartoon illustration of half a coconut" width="325" height="300" srcset=" img/coconut.png 1x,  img/coconut@2x.png 2x" />
+				<h2 data-seq class="seq-title">Coconut</h2>
+			</div>
+		</li>
+		<li class="seq-step3 seq-valign">
+			<div class="seq-vcenter">
+				<img data-seq class="seq-feature" src=" img/orange.png" alt="A cartoon illustration of a round orange" width="350" height="300" srcset=" img/orange.png 1x,  img/orange@2x.png 2x" />
+				<h2 data-seq class="seq-title">Orange</h2>
+			</div>
+		</li>
+	</ul>
+
+	    <fieldset class="seq-nav" aria-label="Slider buttons" aria-controls="sequence">
+		<button type="button" class="seq-prev" aria-label="Previous">
+			<img src=" img/prev.svg" alt="Previous" />
+		</button>
+	
+		<ul role="navigation" aria-label="Pagination" class="seq-pagination">
+			<li class="seq-current">
+				<a href="#step1" rel="step1" title="Go to bananas">
+					<img src=" img/tn-bananas@2x.png" alt="Bananas" width="50" height="40" />
+				</a>
+			</li>
+			<li>
+				<a href="#step2" rel="step2" title="Go to coconut">
+					<img src=" img/tn-coconut@2x.png" alt="Coconut" width="50" height="40" />
+				</a>
+			</li>
+			<li>
+				<a href="#step3" rel="step3" title="Go to orange">
+					<img src=" img/tn-orange@2x.png" alt="Orange" width="50" height="40" />
+				</a>
+			</li>
+		</ul>
+	
+		<button type="button" class="seq-next" aria-label="Next">
+			<img src=" img/next.svg" alt="Next" />
+		</button>
+	
+	</fieldset>
+      </div>
+       <div class="bot" id="bot"><a class="scroll" href="#home"><img src="img/arrow-home-salmon-f.png"></a></div>
+</section>
+
+
+<!--
+<footer id="footer">
+  <div class="social"> 
+    <a class="pastille facebook" target="_blank" href="javascript:;"> <span class="icon">Hacete Fan en Facebook</span> <span class="icon roll"></span> </a> 
+    <a class="pastille twitter" target="_blank" href="javascript:;"> <span class="icon">Seguinos en Twitter</span> <span class="icon roll"></span> </a> 
+    <a class="pastille instagram" target="_blank" href="javascript:;"> <span class="icon">Seguinos en Instagram</span> <span class="icon roll"></span> </a> 
+  </div>
+</footer>
+-->
+
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/sequence.min.js"></script>
+<script src="js/sequence-theme.mono.js"></script>
+
+<script src="js/parallax.js"></script>
+<script src="js/js.js"></script>
 <script>
-$(window).load(function(){
-	$('#loading').css('transform','scale(1.4)');
-	$('#loading').fadeOut('slow', function(){
-		$('section').removeClass('in');
+$(document).ready(function(){
+//视差
+    var scene = document.getElementById('inicio');
+    var scene1 = document.getElementById('slide1');
+    var scene2 = document.getElementById('slide2');
+    var scene3 = document.getElementById('slide3');
+    var parallax = new Parallax(scene);
+    var parallax = new Parallax(slide1);
+    var parallax = new Parallax(slide2);
+    var parallax = new Parallax(slide3);
+    
+//幻灯片
+  var cantSlide = $('.flexManifiesto ul.slides li').length;
+  $('#cant').html('/'+cantSlide);
+  $('.flexSivori').flexslider({
+	animation: "fade"
+  });
+  $('.flexManifiesto').flexslider({
+	animation: "slide"
+  });
+  //头滚动
+	$(window).scroll(function(e){
+		var scrol = $(window).scrollTop();
+		var section = $('section').height() - 100;
+		if(scrol >= section && scrol < (section*2)){
+			$('#home header').addClass('headSalmon');
+			$('nav').addClass('navBlue');	
+		}else if(scrol > (section*3)){
+			$('#home header').addClass('headSalmon');
+			$('nav').addClass('navBlue');					
+		}else{
+			$('#home header').removeClass('headSalmon');
+			$('nav').removeClass('navBlue');
+		}
+		navMainScroll()
 	});
 });
+//botoncitos
+navMainScroll()
 
+$(".nav-main").on('click', function(e){
+	e.preventDefault();
+	var newtop = $("#"+$(this).data("section")).offset().top;
+	scrolling=true;
+	$("html,body").stop(true,true).animate({scrollTop:  newtop + "px"}, 300,function(){
+		scrolling=false;
+	});
+});
+function navMainScroll(){	
+	var scrol = $(window).scrollTop();
+	// nav lateral
+	$(".nav-main").each(function(e,i){
+		var sec = $("#"+$(this).data("section"));
 
+		if (!sec.offset()) return
+			if( (scrol+$(window).height()/2) >= sec.offset().top && (sec.offset().top+$(window).height()) > scrol && !sec.hasClass("active")){
+			$(".nav-main").removeClass("active");
+			$(this).addClass("active");
+		}
+	});	
+}
+/*鼠标滚动*/
+if($(window).width() > 768){
+
+    var scrol = 0;
+    var handleAvailable = true;
+
+    // function sube(){
+    //     window.onmousewheel = document.onmousewheel = null;
+    //     window.removeEventListener('DOMMouseScroll', wheel, false);
+    //             handleAvailable = true;
+    //     $(window).scroll(function(){
+    //         //alert($('body').scrollTop());
+    //         //alert($('#slide3').offset().top);
+    //         if($('body').scrollTop() < $('#slide3').offset().top){
+    //             scroll=1;
+    //             window.onmousewheel = document.onmousewheel = wheel;
+    //             window.addEventListener('DOMMouseScroll', wheel, false);
+    //             // handle(1);
+    //         }
+    //     });
+    // }
+    function handle(delta) {
+        
+        //window.onmousewheel = document.onmousewheel = wheel;
+        //window.addEventListener('DOMMouseScroll', wheel, false);
+
+        if(handleAvailable == true){
+        
+            if (delta < 0){ 
+                console.log(scrol);
+                handleAvailable = false;
+
+                if(scrol == 0){
+                    playSection('slide1', 0);
+                    scrol = 1;
+
+                }else if(scrol == 1){
+                    playSection('slide2', 0);
+                    scrol = 2;
+
+                }else if(scrol == 2){
+                    playSection('slide3', 0);
+                    scrol = 3;
+
+                }else if(scrol == 3){
+                    //playSection('slide3', 350);
+                    window.onmousewheel = document.onmousewheel = null;
+                    window.removeEventListener('DOMMouseScroll', wheel, false);
+                   // sube();
+                    scrol = 4;  
+                }else if(scrol == 4){
+                    playSection('footer', 0);
+                    scrol = 4;  
+                }           
+            }
+            else if(delta > 0){
+                console.log(scrol);
+                handleAvailable = false;
+
+                if(scrol == 4){
+                    //playSection('slide3', 350);
+                    scrol = 3;
+                }else if(scrol == 3){
+                    playSection('slide3', 0);
+                    scrol = 2;
+                }else if(scrol == 2){
+                    playSection('slide2', 0);
+                    scrol = 1;
+                }else if(scrol == 1){
+                    playSection('slide1', 0);
+                    scrol = 0;
+                } else if(scrol == 0){
+                    playSection('inicio', 0);
+                    scrol = 0;
+                }
+            }
+        }
+    }
+
+    function playSection(section, x){
+        
+        $('html, body').animate({scrollTop: $('#'+section).offset().top + x}, 300);
+        setTimeout(function(){
+            handleAvailable = true; // una vez que termina el video habilito el scroll de nuevo
+        }, 1000);
+    }
+
+    function wheel(event){
+            var delta = 0;
+            if (!event)
+                    event = window.event;
+            if (event.wheelDelta) {
+                    delta = event.wheelDelta/120;
+            } else if (event.detail) { 
+                    delta = -event.detail/3;
+            }
+            if (delta)
+                    handle(delta);
+           
+            if (event.preventDefault)
+                    event.preventDefault();
+            event.returnValue = false;
+    }
+    if (window.addEventListener)
+            /** DOMMouseScroll is for mozilla. */
+            window.addEventListener('DOMMouseScroll', wheel, false);
+    /** IE/Opera. */
+    window.onmousewheel = document.onmousewheel = wheel;
+
+}
+      /*滑动*/
+$(function(){
+	var bOk=false;
+	window.onscroll=function (){
+		var sT=document.documentElement.scrollTop||document.body.scrollTop;
+		if(bOk){
+			clearInterval($('.bot').timer);
+		}
+		bOk=true;
+		
+	};
+	$('.bot').click(function(){
+     var start=document.documentElement.scrollTop||document.body.scrollTop;
+        	var oBt=document.getElementById('bot');
+		var iTarget=0;   
+		var dis=iTarget-start;
+		var count=Math.floor(3000/30);
+		var n=0;
+		
+		clearInterval(oBt.timer);
+		oBt.timer=setInterval(function (){
+			n++;
+			var a=1-n/count;
+			var cur=start+dis*(1-Math.pow(a,3));
+			document.documentElement.scrollTop=document.body.scrollTop=cur;
+			bOk=false;
+			
+			if(n==count){
+				clearInterval(oBt.timer);
+			}
+		},30);   
+    });
+    var oBy=document.getElementById('ul_by');
+    var oLi=oBy.querySelectorAll('li');
+    var oNav=document.getElementById('nav');
+    var oBtnMenu=document.getElementById('btnMenu');
+    for(var i=0;i<oLi.length;i++){
+        oLi[i].onclick=function(){
+            oNav.style.display='none';
+            oBtnMenu.className='btnMenu';
+        };
+    }
+    if(document.documentElement.clientWidth <= 640){
+        $('.Shuffling').css('height','481px');
+    }else if(document.documentElement.clientWidth > 640){
+         $('.Shuffling').css('height','680px');
+    }
+});
 </script>
-</head>
-<body>
-<div id="loading">
-	<img src="loading.png" alt=""/ id="load">
-	<div id="latido" class="loadingGlow"></div>
-	<div id="circle"></div>
-</div>
 </body>
 </html>

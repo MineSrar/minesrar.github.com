@@ -7,9 +7,15 @@
 		header .logo img {width: 100px;}
 	header .btnMenu {top: 6%; right: 10%;}
 
-	#nav_main, #estudio_02 .clientList, #manchas .border, #manchas .circle, #manchas .mancha, .arrowsManifiesto, .arrowDown,  #casos.salazar .launch img.thumb, #casos .moreCase .proy .imgProy, #casos .moreCase .proy .arrowIr, #casos .moreCase .proy.mid .circleBalls {display: none !important;}
+	#nav_main, #estudio_02 .clientList, #manchas .border, #manchas .circle, #manchas .mancha, .arrowsManifiesto, .arrowDown, .job ul li img, #casos.salazar .launch img.thumb, #casos .moreCase .proy .imgProy, #casos .moreCase .proy .arrowIr, #casos .moreCase .proy.mid .circleBalls {display: none !important;}
 		#slide3 .wpJobs {height: initial; width: 100%;}
-			
+			.job {position: relative !important; left: 0 !important; right: 0 !important; top: 0 !important; margin:0 auto; margin-bottom: 20px;}
+			.job.flexBehance {padding: 10px 0;}
+				.flexBehance span {bottom: 46px;}
+			.job.flexMole {width: 370px; height: 235px;}
+				.flexMole .copy {width: 220px; top: 25px;}
+				.flexMole img.phone {width: 230px; top: -30px;}
+
 		#slide3 .splash {display: none !important;}
 	
 	 #inicio .welcome, #slide1 .welcome, #slide2 .welcome {margin-top: 0 !important; width: 80% !important; margin-left: 10%; height: initial !important}
@@ -17,7 +23,7 @@
 	#inicio .splash {margin-top: 35% !important;}
 	#slide1 .splash, #slide2 .splash {margin-top: 25% !important;}
 	.flexSivori li, .flexSivori {height: 320px;}
-	#slide3 {padding-bottom: 120px;}
+	
 	#estudio_01 {padding-bottom: 200px;}
 	#estudio_01 .welcome, #estudio_01 .holaTxt, .wp960 {width: 80%;}
 	#estudio_02 .strip {height: 230px;}
@@ -149,7 +155,14 @@
 	.welcome {margin-bottom: 0; margin-top: 130px !important;}
 		.welcome p {font-size: 40px; padding: 30px 0;}
 	
-	
+	#slide3 .wpJobs {margin-top: 70px;}
+	.job {width: 95% !important;}
+		.flexMole .copy {width: 290px;}
+		.flexFoodpro {height: 170px;}
+			.flexFoodpro .copy {padding-left: 15px;}
+		.flexBehance .arrowIr {margin-left: 85px;}
+		.flexBehance span {right: 100px;}
+		.job.flexManifiesto {width: 90% !important; padding: 40px 10px; background-position: 40px 50px;}
 			.flexManifiesto span {margin-bottom: 20px;}
 
 	#estudio_02 .textuales {height: 370px;}
@@ -177,4 +190,59 @@
 	.flexBehance .arrowIr {margin-left: 75px;}
 	.flexBehance span {right: 80px;}
 
+}
+
+
+@media only screen and (min-width: 460px) {
+  .seq .seq-feature {
+    max-height: 50vh;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 320px) and (min-height: 320px) {
+  .Shuffling .seq .seq-canvas > * {
+    bottom: 80px;
+    bottom: 5rem;
+  }
+
+ .Shuffling  .seq .seq-title {
+    font-size: 1.4em;
+  }
+
+  .Shuffling .seq .seq-nav {
+    /*
+     * Position the nav across the bottom
+     */
+    top: auto;
+    bottom: 2.5em;
+  }
+
+ .Shuffling  .seq .seq-next,
+ .Shuffling .seq .seq-prev,
+ .Shuffling  .seq .seq-pagination {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0;
+  }
+    
+  .Shuffling .seq .seq-pagination {
+    /*
+     * Show the pagination
+     */
+    display: inline-block;
+  }
+    .Shuffling .bot{width: 40px;height:40px;line-height: 40px;    right: 5%;bottom: 0;} 
+}
+
+@media only screen and (min-height: 480px) {
+  .seq .seq-feature {
+    /*
+     * The image can now become its full native height
+     */
+    max-height: 100%;
+  }
 }
