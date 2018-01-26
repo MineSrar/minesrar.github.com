@@ -1,1 +1,1 @@
-# minesrar.github.com
+# minesrar.github.io
